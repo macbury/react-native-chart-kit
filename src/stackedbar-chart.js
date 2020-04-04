@@ -107,7 +107,6 @@ class StackedBarChart extends AbstractChart {
 
   render() {
     const paddingTop = 15;
-    const paddingRight = 50;
     const {
       width,
       height,
@@ -116,7 +115,10 @@ class StackedBarChart extends AbstractChart {
       withHorizontalLabels = true,
       withVerticalLabels = true,
       segments = 4,
-      decimalPlaces
+      decimalPlaces,
+      formatXLabel,
+      formatYLabel,
+      paddingRight = 50
     } = this.props;
     const { borderRadius = 0 } = style;
     const config = {
@@ -160,7 +162,8 @@ class StackedBarChart extends AbstractChart {
                   data: [0, border],
                   paddingTop,
                   paddingRight,
-                  decimalPlaces
+                  decimalPlaces,
+                  formatYLabel
                 })
               : null}
           </G>
@@ -172,7 +175,8 @@ class StackedBarChart extends AbstractChart {
                   paddingRight: paddingRight + 28,
                   stackedBar,
                   paddingTop,
-                  horizontalOffset: barWidth
+                  horizontalOffset: barWidth,
+                  formatXLabel
                 })
               : null}
           </G>
