@@ -281,6 +281,17 @@ export interface StackedBarChartProps {
    * The number of horizontal lines
    */
   segments?: number;
+    /**
+   * This function change the format of the display value of the Y label.
+   * Takes the y value as argument and should return the desirable string.
+   */
+  formatYLabel?: (yValue: string) => string;
+  /**
+   * This function change the format of the display value of the X label.
+   * Takes the X value as argument and should return the desirable string.
+   */
+  formatXLabel?: (xValue: string) => string;
+  paddingRight: number;
 }
 
 export class StackedBarChart extends React.Component<StackedBarChartProps> {}
